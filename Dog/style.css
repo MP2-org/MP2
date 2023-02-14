@@ -1,0 +1,53 @@
+/* DOG */
+.team .slide{
+    text-align: center;
+}
+
+.team .slide .image{
+    position: relative;
+    overflow: hidden;
+}
+
+.team .slide .image img{
+    width: 30%;
+}
+
+.team .slide .image .share{
+    padding: 2rem;
+    position: absolute;
+    bottom: -10rem;
+    left: 0; right: 0;
+    background: pink
+}
+
+.team .slide:hover .image .share{
+    bottom: 0;
+}
+
+.team .slide .image .share a{
+    font-size: 3rem;
+    margin: 0 1rem;
+    color: var(--white);
+}
+
+.team .slide .image .share a:hover{
+    color: var(--secondary);
+}
+
+.team .slide .content{
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team .slide .content h3{
+    font-size: 2rem;
+    color: var(--black);
+}         
+
+.team .slide .content span{
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--light-color);
+}
