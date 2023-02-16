@@ -1,0 +1,260 @@
+/* Dog running */
+
+#loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.7);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loader img {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  margin-right: 6px;
+  animation: dog-running 2s linear infinite;
+}
+
+@keyframes dog-running {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+#loader.loading-done {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease-in-out, visibility 1.5s linear 1s;
+}
+
+/* Styles of the navbar */
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(250, 234, 177);
+}
+
+a {
+  color: black;
+}
+.sr-only {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.logo {
+  margin: 0;
+  width: 8em;
+}
+
+nav {
+  padding: 20px;
+}
+
+nav.sticky {
+  margin: 0;
+  padding: 1px;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 #e38b29;
+}
+
+nav.sticky .logo {
+  width: 4em;
+}
+nav ul li a {
+  color: #e38b29;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #87805e;
+  transition: 0.3s;
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-navigation {
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: hsl(0, 0%, 100% / 0.1);
+  backdrop-filter: blur(1rem);
+}
+
+.volunter-button {
+  border: none;
+  align-items: center;
+  color: white;
+  background: #e38b29;
+  padding: 8px 20px;
+  border-radius: 26px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.volunter-button:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  background-color: #fff;
+  color: #e38b29;
+  cursor: pointer;
+}
+
+nav.sticky .volunter-button:hover {
+  color: #e38b29;
+  background: rgb(250, 234, 177);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+    background: hsl(0, 0%, 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > [aria-hidden="true"] {
+  font-weight: 700;
+  margin-inline-end: 0.75em;
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    --gap: 2em;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    justify-content: space-between;
+    z-index: 9999;
+    background-color: transparent;
+    background-image: url("../icon/bars-solid.svg");
+    background-repeat: no-repeat;
+    width: 30px;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("../icon/xmark-solid.svg");
+  }
+}
+
+@media (min-width: 35em) {
+  .primary-navigation {
+    padding: 1rem;
+  }
+}
+
+/* search  */
+
+#app {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+}
+label {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 12px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 0;
+  box-shadow: 1px 1px 5px #e38b29;
+  border-radius: 30px;
+}
+label::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 80%;
+  background-color: #e38b29;
+  -webkit-transition: all 1s ease 0.5s;
+  transition: all 1s ease 0.5s;
+}
+label input {
+  -webkit-transition: width 1s ease, opacity 0.5s ease 0.5s;
+  transition: width 1s ease, opacity 0.5s ease 0.5s;
+  opacity: 1;
+  width: 130px;
+  height: 25px;
+  border: 0;
+  outline: none;
+  color: black;
+}
+
+label i {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  color: #333;
+  cursor: pointer;
+}
+label[data-state="close"] {
+  border-radius: 30px;
+  padding: 5px 5px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+label[data-state="close"]::after {
+  width: 0%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+label[data-state="close"] i {
+  pointer-events: none;
+}
+label[data-state="close"] input {
+  width: 28px;
+  height: 25px;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: opacity 0.5s ease, width 1s ease;
+  transition: opacity 0.5s ease, width 1s ease;
+  -webkit-appearance: none;
+}

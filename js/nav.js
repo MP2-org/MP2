@@ -1,3 +1,18 @@
+//  search button
+
+var app = new Vue({
+  el: "#app",
+  data: { state: "close" },
+});
+
+//Dog running
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    document.querySelector("#loader").classList.add("loading-done");
+  }, 700);
+});
+
 // Responsive navbar
 
 const primaryNav = document.querySelector(".primary-navigation");
@@ -5,7 +20,6 @@ const navToggle = document.querySelector(".mobile-nav-toggle");
 
 navToggle.addEventListener("click", () => {
   const visibility = primaryNav.getAttribute("data-visible");
-  console.log(visibility);
   if (visibility === "false") {
     primaryNav.setAttribute("data-visible", true);
     navToggle.setAttribute("aria-expanded", true);
@@ -13,4 +27,11 @@ navToggle.addEventListener("click", () => {
     primaryNav.setAttribute("data-visible", false);
     navToggle.setAttribute("aria-expanded", false);
   }
+});
+
+//effect scrolly
+
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  nav.classList.toggle("sticky", window.scrollY > 0);
 });
