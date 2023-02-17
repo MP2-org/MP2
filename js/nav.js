@@ -10,7 +10,7 @@ var app = new Vue({
 window.addEventListener("load", function () {
   setTimeout(function () {
     document.querySelector("#loader").classList.add("loading-done");
-  }, 700);
+  }, 4000);
 });
 
 // Responsive navbar
