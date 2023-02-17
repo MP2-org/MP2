@@ -35,3 +35,14 @@ window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
   nav.classList.toggle("sticky", window.scrollY > 0);
 });
+
+// submit popup
+
+let popup = document.getElementById("popup");
+
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+function closePopup() {
+  popup.classList.remove("open-popup");
+}
