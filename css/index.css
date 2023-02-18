@@ -57,12 +57,11 @@ a {
 
 .logo {
   margin: 0;
-  width: 8rem;
+  width: 6rem;
 }
 
 nav {
   padding: 18px;
-  box-shadow: 0 4px 8px 0 #e38b29;
 }
 
 /* sticky scroll-up */
@@ -168,7 +167,7 @@ nav.sticky .volunter-button:hover {
 
   .mobile-nav-toggle {
     display: block;
-    justify-content: space-between;
+
     z-index: 9999;
     background-color: transparent;
     background-image: url("../icon/bars-solid.svg");
@@ -262,6 +261,76 @@ label[data-state="close"] input {
   -webkit-appearance: none;
 }
 
+/* wave footer */
+
+.wave-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: rgb(250, 234, 177);
+  overflow: hidden;
+}
+
+.wave-header .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../img/wave.png);
+  background-size: 1000px 100px;
+}
+
+.wave-header .wave.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+.wave-header .wave.wave2 {
+  animation: animate2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+.wave-header .wave.wave3 {
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+
+.wave-header .wave.wave4 {
+  animation: animate2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
 /* footer */
 
 #end {
@@ -285,9 +354,9 @@ ul {
   display: contents;
 }
 .footer {
-  background-color: #fff;
   padding: 30px 0;
   padding-bottom: 30px;
+  background: #fff;
 }
 .footer-col {
   width: 25%;
@@ -317,13 +386,13 @@ ul {
   font-size: 14px;
   text-transform: capitalize;
   text-decoration: none;
-  font-weight: ;
+  font-weight: 500;
   color: #e38b29;
   display: block;
   transition: all 0.3s ease;
 }
 .footer-col ul li a:hover {
-  color: rgb(250, 234, 177);
+  color: rgb(98, 79, 11);
   padding-left: 8px;
 }
 .footer-col .social-links a {
@@ -353,4 +422,12 @@ ul {
   .footer-col {
     width: 100%;
   }
+}
+
+/* bottom part of the html */
+
+.bottom {
+  text-align: center;
+  color: #e38b29;
+  font-size: 13px;
 }
