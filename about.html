@@ -50,6 +50,53 @@
       />
     </div>
 
+    <!-- Modal volunteer -->
+
+    <div class="modal fade" tabindex="-1" id="show-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-form">
+            <div class="modal-header">
+              <h5 class="modal-title">Volunteer here!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="#">
+                <div class="field input-field">
+                  <input type="text" placeholder="First name" class="input" />
+                </div>
+                <div class="field input-field">
+                  <input type="text" placeholder="Last name" class="input" />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="text"
+                    placeholder="Email address"
+                    class="input"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Header and the navbar -->
     <nav class="header sticky-top" data-visible="false">
       <header class="container primary-header flex">
@@ -109,7 +156,14 @@
           </li>
 
           <li>
-            <button class="volunter-button" type="button">Volunteer</button>
+            <button
+              class="volunter-button"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#show-modal"
+            >
+              Volunteer
+            </button>
           </li>
         </ul>
       </header>
