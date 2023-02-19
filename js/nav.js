@@ -36,17 +36,6 @@ window.addEventListener("scroll", function () {
   nav.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// submit popup
-
-let popup = document.getElementById("popup");
-
-function openPopup() {
-  popup.classList.add("open-popup");
-}
-function closePopup() {
-  popup.classList.remove("open-popup");
-}
-
 // faq
 
 let toggles = document.getElementsByClassName("toggle");

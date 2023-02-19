@@ -483,6 +483,22 @@ nav.sticky .volunter-button:hover {
   font-size: 18px;
 }
 
+@media (max-width: 991px) {
+  .contacts {
+    padding: 50px;
+  }
+  .container5 {
+    flex-direction: column;
+  }
+  .container5 .contactInfo,
+  .container5 .contactForm {
+    width: 100%;
+  }
+  .container5 .contactForm {
+    padding: 50px 30px;
+  }
+}
+
 /* maps */
 
 .container8 {
