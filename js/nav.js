@@ -29,6 +29,17 @@ navToggle.addEventListener("click", () => {
   }
 });
 
+// active navbar
+
+let links = document.querySelectorAll("li a");
+let bodyId = document.querySelector("body").id;
+
+for (let link of links) {
+  if (link.dataset.active == bodyId) {
+    link.classList.add("active");
+  }
+}
+
 //effect scrolly
 
 window.addEventListener("scroll", function () {

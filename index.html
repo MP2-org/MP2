@@ -18,85 +18,35 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 
-    <link rel="stylesheet" href="./css/index.css" />
+    <!-- Font style of About Us-->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Phudu:wght@300;600&family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Phudu:wght@300;600&family=Poppins:wght@100&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/nav.js" defer></script>
 
     <title>Home</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icon/favicon-96x96.png"
+    />
   </head>
 
-  <body>
-    <!-- Dog running -->
-
-    <div id="loader">
-      <img
-        src="https://64.media.tumblr.com/260b2755fafaca65949c6a62bf96c7c2/tumblr_ppkogvE2ky1v2yk7yo1_1280.gif"
-        alt="Dog running"
-      />
-    </div>
-
-    <!-- Modal volunteer -->
-
-    <div class="modal fade" tabindex="-1" id="show-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-form">
-            <div class="modal-header">
-              <h5 class="modal-title">Volunteer here!</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form action="#">
-                <div class="field input-field">
-                  <input type="text" placeholder="First name" class="input" />
-                </div>
-                <div class="field input-field">
-                  <input type="text" placeholder="Last name" class="input" />
-                </div>
-                <div class="field input-field">
-                  <input
-                    type="text"
-                    placeholder="Email address"
-                    class="input"
-                  />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                onclick="openPopup()"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Submit modal popup -->
-
-    <div class="popup" id="popup">
-      <img src="img/tick.png" />
-      <h2>Thank you!</h2>
-      <p>Your details has been successfully submitted.</p>
-      <button type="button" onclick="closePopup()">OK</button>
-    </div>
-
+  <body id="home">
     <!-- Header and the navbar -->
     <nav class="header sticky-top" data-visible="false">
       <header class="container primary-header flex">
@@ -120,10 +70,11 @@
           class="primary-navigation flex"
         >
           <li>
-            <form id="app" action="#">
+            <form id="app" action="#" visible="false">
               <label :data-state="state" for="search">
                 <input
                   type="text"
+                  required
                   placeholder="Type to search.."
                   @click="state = 'opan'"
                   @blur="state='close'"
@@ -131,39 +82,26 @@
                 <i class="fa fa-search" @click="" aria-hidden="true"></i>
               </label>
             </form>
-            <div id="bcl">
-              <a
-                style="font-size: 8pt; text-decoration: none"
-                href="http://www.devanswer.com"
-              ></a>
-            </div>
-          </li>
-          <li class="active">
-            <a href="index.html">Home </a>
           </li>
           <li>
-            <a href="about.html">About</a>
+            <a data-active="home" href="index.html">Home </a>
           </li>
           <li>
-            <a href="adopt.html">Adopt</a>
+            <a data-active="about" href="./pages/about.html">About</a>
+          </li>
+          <li>
+            <a data-active="adopt" href="./pages/adopt.html">Adopt</a>
           </li>
 
           <li>
-            <a href="donate.html">Donate</a>
+            <a data-active="donate" href="./pages/donate.html">Donate</a>
           </li>
           <li>
-            <a href="contact.html">Contact</a>
+            <a data-active="contact" href="./pages/contact.html">Contact</a>
           </li>
 
           <li>
-            <button
-              class="volunter-button"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#show-modal"
-            >
-              Volunteer
-            </button>
+            <button class="volunter-button" type="button">Volunteer</button>
           </li>
         </ul>
       </header>
@@ -171,7 +109,9 @@
 
     <!-- End of the navbar-->
 
-    <!-- wave fotter -->
+    <!-- Contents -->
+
+    <!-- wave footer -->
 
     <section class="wave-header">
       <div class="wave wave1"></div>
@@ -182,7 +122,7 @@
 
     <!-- Footer of the page -->
 
-    <footer class="footer pb-1">
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="footer-col">
