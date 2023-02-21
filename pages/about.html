@@ -46,7 +46,67 @@
     />
   </head>
 
+<<<<<<< HEAD:pages/about.html
   <body id="about">
+=======
+  <body>
+    <!-- Dog running -->
+
+    <div id="loader">
+      <img
+        src="https://64.media.tumblr.com/260b2755fafaca65949c6a62bf96c7c2/tumblr_ppkogvE2ky1v2yk7yo1_1280.gif"
+        alt="Dog running"
+      />
+    </div>
+
+    <!-- Modal volunteer -->
+
+    <div class="modal fade" tabindex="-1" id="show-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-form">
+            <div class="modal-header">
+              <h5 class="modal-title">Volunteer here!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="#">
+                <div class="field input-field">
+                  <input type="text" placeholder="First name" class="input" />
+                </div>
+                <div class="field input-field">
+                  <input type="text" placeholder="Last name" class="input" />
+                </div>
+                <div class="field input-field">
+                  <input
+                    type="text"
+                    placeholder="Email address"
+                    class="input"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+>>>>>>> c71269b76616e94319c2e720bb18f7a697a47f01:about.html
     <!-- Header and the navbar -->
     <nav class="header sticky-top" data-visible="false">
       <header class="container primary-header flex">
@@ -101,7 +161,14 @@
           </li>
 
           <li>
-            <button class="volunter-button" type="button">Volunteer</button>
+            <button
+              class="volunter-button"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#show-modal"
+            >
+              Volunteer
+            </button>
           </li>
         </ul>
       </header>
